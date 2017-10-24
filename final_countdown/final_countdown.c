@@ -12,7 +12,7 @@ void read_input( char *p , unsigned int len ){
     p[size - 1] = p[size - 1] == '\n' ? '\x00' : p[size - 1];
 }
 
-char echo[0x10];
+char echo[0x18];
 
 int main(){
     setvbuf(stdin ,0,_IONBF,0);
@@ -21,7 +21,7 @@ int main(){
 
     for( int i = 3 ; i > -1 ; --i ){
         printf( "tick tock .. What do tou want to say:" );
-        read_input( echo , 0x10 );
+        read_input( echo , 0x18 );
         printf(echo);
         puts("");
         close(i);
