@@ -1,10 +1,10 @@
-ncu_center:
-    build: ./ncu_center
+final_countdown:
+    build: ./final_countdown
     volumes:
-        - ./ncu_center/home:/home/ncu_center:ro
-        - ./ncu_center/xinetd:/etc/xinetd.d/xinetd:ro
+        - ./final_countdown/home:/home/final_countdown:ro
+        - ./final_countdown/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
-        - "10207:4597"
+        - "10202:4597"
     expose:
         - "4597"
 
@@ -14,6 +14,16 @@ shellcode_revenge_plus_plus:
         - ./shellcode_revenge++/home:/home/shellcode_revenge++:ro
         - ./shellcode_revenge++/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
-        - "10210:4597"
+        - "10203:4597"
+    expose:
+        - "4597"
+
+ncu_center:
+    build: ./ncu_center
+    volumes:
+        - ./ncu_center/home:/home/ncu_center:ro
+        - ./ncu_center/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10204:4597"
     expose:
         - "4597"
