@@ -1,12 +1,12 @@
-service ncu_center
+service memo_manager
 {
         disable = no
         type = UNLISTED
         wait = no
-        server = /home/ncu_center/run.sh
+        server = /home/memo_manager/run.sh
         socket_type = stream
         protocol = tcp
-        user = ncu_center
+        user = memo_manager
         port = 4597
         flags = REUSE
         per_source = 10

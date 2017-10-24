@@ -18,11 +18,11 @@ shellcode_revenge_plus_plus:
     expose:
         - "4597"
 
-ncu_center:
-    build: ./ncu_center
+memo_manager:
+    build: ./memo_manager
     volumes:
-        - ./ncu_center/home:/home/ncu_center:ro
-        - ./ncu_center/xinetd:/etc/xinetd.d/xinetd:ro
+        - ./memo_manager/home:/home/memo_manager:ro
+        - ./memo_manager/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
         - "10204:4597"
     expose:
