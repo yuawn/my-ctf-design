@@ -26,6 +26,4 @@ int main(){
         puts("");
         close(i);
     }
-
-    return 0;
 }
