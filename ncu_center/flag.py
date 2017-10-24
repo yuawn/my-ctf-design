@@ -7,7 +7,7 @@ context.arch = 'amd64'
 
 e , l = ELF( './ncu_center' ) , ELF( './libc.so.6' )
 
-host , port = 'ctf.yuawn.idv.tw' , 10107
+host , port = 'ctf.yuawn.idv.tw' , 10204
 y = remote( host , port )
 
 def echo( data ):
