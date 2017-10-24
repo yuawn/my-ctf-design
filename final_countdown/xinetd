@@ -1,0 +1,15 @@
+service final_countdown
+{
+        disable = no
+        type = UNLISTED
+        wait = no
+        server = /home/final_countdown/run.sh
+        socket_type = stream
+        protocol = tcp
+        user = final_countdown
+        port = 4597
+        flags = REUSE
+        per_source = 10
+        rlimit_cpu = 3
+        nice = 18
+}

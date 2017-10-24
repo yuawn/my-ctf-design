@@ -1,0 +1,19 @@
+ncu_center:
+    build: ./ncu_center
+    volumes:
+        - ./ncu_center/home:/home/ncu_center:ro
+        - ./ncu_center/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10207:4597"
+    expose:
+        - "4597"
+
+shellcode_revenge_plus_plus:
+    build: ./shellcode_revenge++
+    volumes:
+        - ./shellcode_revenge++/home:/home/shellcode_revenge++:ro
+        - ./shellcode_revenge++/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10210:4597"
+    expose:
+        - "4597"
