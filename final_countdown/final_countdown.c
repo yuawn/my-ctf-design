@@ -19,7 +19,7 @@ int main(){
 	setvbuf(stdout,0,_IONBF,0);
 	setvbuf(stderr,0,_IONBF,0);
 
-    for( int i = 3 , i > -1 ; --i ){
+    for( int i = 3 ; i > -1 ; --i ){
         read_input( echo , 0x10 );
         printf(echo);
         puts("");
