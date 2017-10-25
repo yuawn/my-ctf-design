@@ -49,6 +49,10 @@ void edit_note(){
         puts("Nop!");
         exit(0);
     }
+    if( !n[i] ){
+        puts("No such note!");
+        exit(0);
+    }
     printf("New size of note:");
     int len = read_int();
     printf("New content of note:");
@@ -63,6 +67,10 @@ void show_note(){
     unsigned i = read_int();
     if( i > 1 ) {
         puts("Nop!");
+        exit(0);
+    }
+    if( !n[i] ){
+        puts("No such note!");
         exit(0);
     }
     printf("note[%d]: %s\n" , i , n[i]->content);
