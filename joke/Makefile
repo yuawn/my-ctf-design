@@ -1,2 +1,2 @@
 joke:joke.c
-	gcc -fno-stack-protector -static joke.c -o home/joke
+	gcc -fpie -pie -Wl,-z,relro,-z,now -fno-stack-protector -static joke.c -o home/joke
