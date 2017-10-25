@@ -34,6 +34,10 @@ void add_note(){
             n[i]->size = len;
             printf("Content of note:");
             n[i]->content = (char*)malloc( len );
+            if( !n[i]->content ){
+                puts("Alloc error!");
+                exit(0);
+            }
             read( 0 , n[i]->content , len );
             puts("Done!");
             return;

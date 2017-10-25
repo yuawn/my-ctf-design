@@ -14,6 +14,11 @@
 * First time `fmt` Leak stack address and libc base.
 * Second time `fmt` to forge last two byte of `rbp`.
 * Overwrite return address of `_IO_vfprintf_internal` with one gadget.
-## Joke 400
+## Joke 350
 * `_dl_make_stack_executable`.
 * Socket shellcodeing.
+## Three pages 400
+* `add_name` overflow overwrite top chunk size.
+* House of force to overwrite data pointer.
+* Leak libc and overwrite `__malloc_hook`.
+* Leave messege trigger shell.
