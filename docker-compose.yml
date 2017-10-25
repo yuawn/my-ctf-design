@@ -37,3 +37,13 @@ joke:
         - "10205:4597"
     expose:
         - "4597"
+
+two_page:
+    build: ./two_page
+    volumes:
+        - ./two_page/home:/home/two_page:ro
+        - ./two_page/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10206:4597"
+    expose:
+        - "4597"
