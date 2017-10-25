@@ -5,7 +5,7 @@
 int main(){
     
     char joke[16];
-    read( 0 , joke  , 200 );
+    read( 0 , joke  , 169 );
     close(0);
     close(1);
     close(2);
