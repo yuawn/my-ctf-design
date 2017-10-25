@@ -49,10 +49,23 @@ void edit_note(){
         puts("Nop!");
         exit(0);
     }
+    printf("New size of note:");
+    int len = read_int();
     printf("New content of note:");
-    read( 0 , n[i]->content , n[i]->size );
+    n[i]->size = len;
+    read( 0 , n[i]->content , len );
     
     puts("Done!");
+    return ;
+}
+
+void show_note(){
+    unsigned i = read_int();
+    if( i > 1 ) {
+        puts("Nop!");
+        exit(0);
+    }
+    printf("note[%d]: %s\n" , i , n[i]->content);
     return ;
 }
 
