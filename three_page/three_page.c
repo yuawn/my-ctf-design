@@ -25,7 +25,7 @@ int read_int(){
 void add_note(){
     char buf[8];
     int len;
-    for( int i = 0 ; i < 2 ; ++i ){
+    for( int i = 0 ; i < 3 ; ++i ){
         if( !n[i] ){
             n[i] = (struct note*)malloc( sizeof( struct note ) );
             printf("Size of note:");
