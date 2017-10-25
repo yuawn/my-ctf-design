@@ -6,7 +6,7 @@
 struct note{
     int size;
     char *content;
-}
+};
 
 char name[8];
 
@@ -29,10 +29,10 @@ void add_note(){
             n[i] = (struct note*)malloc( sizeof( struct note ) );
             printf("Size of note:");
             read( 0 , buf , 8 );
-            n[i].size = atoi( buf );
+            n[i]->size = atoi( buf );
             printf("Content of note:");
-            n[i].content = malloc( n[i].size )
-            read( 0 , n[i].content , n[i].size );
+            n[i]->content = malloc( n[i].size )
+            read( 0 , n[i]->content , n[i]->size );
             puts("Done!");
             return;
         }
@@ -48,7 +48,7 @@ void edit_note(){
         exit(0);
     }
     printf("New content of note:");
-    read( 0 , n[i].content , n[i].size );
+    read( 0 , n[i]->content , n[i]->size );
     
     puts("Done!");
     return ;
