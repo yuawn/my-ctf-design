@@ -31,7 +31,7 @@ void add_note(){
             read( 0 , buf , 8 );
             n[i]->size = atoi( buf );
             printf("Content of note:");
-            n[i]->content = malloc( n[i].size )
+            n[i]->content = malloc( n[i]->size );
             read( 0 , n[i]->content , n[i]->size );
             puts("Done!");
             return;
