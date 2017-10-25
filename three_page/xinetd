@@ -1,12 +1,12 @@
-service two_page
+service three_page
 {
         disable = no
         type = UNLISTED
         wait = no
-        server = /home/two_page/run.sh
+        server = /home/three_page/run.sh
         socket_type = stream
         protocol = tcp
-        user = two_page
+        user = three_page
         port = 4597
         flags = REUSE
         per_source = 10
