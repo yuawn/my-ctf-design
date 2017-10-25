@@ -17,6 +17,7 @@
 ## Joke 350
 * `_dl_make_stack_executable`.
 * Socket shellcodeing.
+* Reverse shell.
 ## Three pages 400
 * `add_name` overflow overwrite top chunk size.
 * House of force to overwrite data pointer.

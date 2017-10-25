@@ -100,11 +100,9 @@ void leave_messege(){
         puts( "I already heard your messege!" );
         return;
     }
-    printf("Messege length:");
-    int len = read_int();
-    messege = (char *)malloc( len );
+    messege = (char *)malloc( 0x100 );
     puts("Messege:");
-    read( 0 , messege , len );
+    read( 0 , messege , 0x100 );
     puts("Done!");
     return;
 }
