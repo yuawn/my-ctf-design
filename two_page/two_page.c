@@ -83,6 +83,7 @@ void add_name(){
         return;
     }
     name = (char *)malloc( 0x10 );
+    puts("What's your name?");
     read( 0 , name , 0x20 );
     puts("Done!");
     return;
