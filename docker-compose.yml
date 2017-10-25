@@ -8,11 +8,11 @@ final_countdown:
     expose:
         - "4597"
 
-shellcode_revenge_plus_plus:
-    build: ./shellcode_revenge++
+name:
+    build: ./name
     volumes:
-        - ./shellcode_revenge++/home:/home/shellcode_revenge++:ro
-        - ./shellcode_revenge++/xinetd:/etc/xinetd.d/xinetd:ro
+        - ./name/home:/home/name:ro
+        - ./name/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
         - "10203:4597"
     expose:

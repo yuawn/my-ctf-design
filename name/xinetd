@@ -1,12 +1,12 @@
-service shellcode_revenge++
+service name
 {
         disable = no
         type = UNLISTED
         wait = no
-        server = /home/shellcode_revenge++/run.sh
+        server = /home/name/run.sh
         socket_type = stream
         protocol = tcp
-        user = shellcode_revenge++
+        user = name
         port = 4597
         flags = REUSE
         per_source = 10
