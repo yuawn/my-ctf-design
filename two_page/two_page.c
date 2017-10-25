@@ -8,9 +8,9 @@ struct note{
     char *content;
 };
 
-char name[8];
+char *name;
 
-struct note *n[2];
+struct note *n[3];
 
 int read_int(){
     char buf[16];
@@ -45,7 +45,7 @@ void add_note(){
 
 void edit_note(){
     unsigned i = read_int();
-    if( i > 1 ) {
+    if( i > 2 ) {
         puts("Nop!");
         exit(0);
     }
@@ -53,11 +53,11 @@ void edit_note(){
         puts("No such note!");
         exit(0);
     }
-    printf("New size of note:");
-    int len = read_int();
+    //printf("New size of note:");
+    //int len = read_int();
     printf("New content of note:");
-    n[i]->size = len;
-    read( 0 , n[i]->content , len );
+    //n[i]->size = len;
+    read( 0 , n[i]->content , n[i]->size );
     
     puts("Done!");
     return ;
@@ -65,7 +65,7 @@ void edit_note(){
 
 void show_note(){
     unsigned i = read_int();
-    if( i > 1 ) {
+    if( i > 2 ) {
         puts("Nop!");
         exit(0);
     }
@@ -77,12 +77,24 @@ void show_note(){
     return ;
 }
 
+void add_name(){
+    if( name ) {
+        puts( "I already know your name!" );
+        return;
+    }
+    name = (char *)malloc( 0x10 );
+    read( 0 , name , 0x20 );
+    puts("Done!");
+    return;
+}
+
 void menu(){
     puts("----------------");
     puts("1. add a note");
     puts("2. edit a note");
     puts("3. show a note");
-    puts("4. exit");
+    puts("4. What's your name?");
+    puts("5. exit");
     puts("----------------");
     puts("Your choice:");
 }
@@ -92,9 +104,6 @@ int main(){
 	setvbuf(stdout,0,2,0);
     setvbuf(stderr,0,2,0);
     
-    puts( "What your name?" );
-    read( 0 , name , 8 );
-
     while(1){
         menu();
         switch( read_int() ){
@@ -108,6 +117,9 @@ int main(){
                 show_note();
                 break;
             case 4:
+                add_name();
+                break;
+            case 5:
                 printf("Bye!\n");
                 _exit(0);
                 break;
