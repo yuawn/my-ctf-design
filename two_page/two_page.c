@@ -54,6 +54,15 @@ void edit_note(){
     return ;
 }
 
+void menu(){
+    puts("----------------");
+    puts("1. add a note");
+    puts("2. edit a note");
+    puts("3. exit");
+    puts("----------------");
+    puts("Your choice:");
+}
+
 int main(){
     setvbuf(stdin,0,2,0);
 	setvbuf(stdout,0,2,0);
@@ -62,21 +71,24 @@ int main(){
     puts( "What your name?" );
     read( 0 , name , 8 );
 
-    switch( read_int() ){
-        case 1:
-            add_note();
-            break;
-        case 2:
-            edit_note();
-            break;
-        case 3:
-            printf("Bye!\n");
-            _exit(0);
-            break;
-        default:
-            puts("Invalid choice!");
-            break;
-    }  
+    while(1){
+        menu();
+        switch( read_int() ){
+            case 1:
+                add_note();
+                break;
+            case 2:
+                edit_note();
+                break;
+            case 3:
+                printf("Bye!\n");
+                _exit(0);
+                break;
+            default:
+                puts("Invalid choice!");
+                break;
+        }  
+    }
 
     return 0;
 }
