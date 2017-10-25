@@ -81,7 +81,8 @@ void menu(){
     puts("----------------");
     puts("1. add a note");
     puts("2. edit a note");
-    puts("3. exit");
+    puts("3. show a note");
+    puts("4. exit");
     puts("----------------");
     puts("Your choice:");
 }
@@ -104,6 +105,9 @@ int main(){
                 edit_note();
                 break;
             case 3:
+                show_note();
+                break;
+            case 4:
                 printf("Bye!\n");
                 _exit(0);
                 break;
