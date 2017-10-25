@@ -8,7 +8,7 @@ struct note{
     char *content;
 };
 
-char *name;
+char *name , *messege;
 
 struct note *n[3];
 
@@ -91,13 +91,29 @@ void add_name(){
     return;
 }
 
+void leave_messege(){
+    if( messege ) {
+        puts( "I already heard your messege!" );
+        return;
+    }
+    printf("Messege length:");
+    int len = read_int();
+    messege = (char *)malloc( len );
+    puts("Messege:");
+    read( 0 , messege , len );
+    puts("Done!");
+    return;
+}
+
+
 void menu(){
     puts("----------------");
     puts("1. add a note");
     puts("2. edit a note");
     puts("3. show a note");
     puts("4. What's your name?");
-    puts("5. exit");
+    puts("5. Leave messege for me");
+    puts("6. exit");
     puts("----------------");
     puts("Your choice:");
 }
@@ -123,6 +139,9 @@ int main(){
                 add_name();
                 break;
             case 5:
+                leave_messege();
+                break;
+            case 6:
                 printf("Bye!\n");
                 _exit(0);
                 break;
