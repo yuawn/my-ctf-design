@@ -24,15 +24,17 @@ int read_int(){
 
 void add_note(){
     char buf[8];
+    int len;
     for( int i = 0 ; i < 2 ; ++i ){
         if( !n[i] ){
             n[i] = (struct note*)malloc( sizeof( struct note ) );
             printf("Size of note:");
             read( 0 , buf , 8 );
-            n[i]->size = atoi( buf );
+            len = atoi( buf );
+            n[i]->size = len;
             printf("Content of note:");
-            n[i]->content = malloc( n[i]->size );
-            read( 0 , n[i]->content , n[i]->size );
+            n[i]->content = (char*)malloc( len );
+            read( 0 , n[i]->content , len );
             puts("Done!");
             return;
         }
