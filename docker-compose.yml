@@ -27,3 +27,13 @@ memo_manager:
         - "10204:4597"
     expose:
         - "4597"
+
+joke:
+    build: ./joke
+    volumes:
+        - ./joke/home:/home/joke:ro
+        - ./joke/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10205:4597"
+    expose:
+        - "4597"
