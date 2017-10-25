@@ -44,6 +44,7 @@ void add_note(){
 }
 
 void edit_note(){
+    printf("Index:");
     unsigned i = read_int();
     if( i > 2 ) {
         puts("Nop!");
@@ -64,6 +65,7 @@ void edit_note(){
 }
 
 void show_note(){
+    printf("Index:");
     unsigned i = read_int();
     if( i > 2 ) {
         puts("Nop!");
