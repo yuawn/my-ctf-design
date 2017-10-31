@@ -5,6 +5,7 @@
 
 char *name = NULL;
 int len = 0;
+long count = 0;
 long age = 0;
 long l[0x10];
 char *n[0x10];
@@ -34,6 +35,7 @@ void add(){
             puts( "Leave something in the chunk:" );
             read( 0 , n[i] , size );
             puts( "done!" );
+            count++;
             return;
         }
     }
