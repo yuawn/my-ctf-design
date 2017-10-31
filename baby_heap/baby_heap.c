@@ -118,7 +118,7 @@ int main(){
                 add_user();
                 break;
             case 2:
-                change_password();
+                edit_user();
                 break;
             case 3:
                 show();
