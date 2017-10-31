@@ -57,3 +57,13 @@ baby_heap:
         - "10207:4597"
     expose:
         - "4597"
+
+free:
+    build: ./free
+    volumes:
+        - ./free/home:/home/free:ro
+        - ./free/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10208:4597"
+    expose:
+        - "4597"

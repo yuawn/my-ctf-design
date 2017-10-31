@@ -18,6 +18,10 @@
 * `_dl_make_stack_executable`.
 * Socket shellcodeing.
 * Reverse shell.
+## baby_heap 400
+* Double free
+* fastbin attack
+* gothijacking
 ## Three pages 450
 * `add_name` overflow overwrite top chunk size.
 * House of force to overwrite data pointer.

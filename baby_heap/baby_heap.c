@@ -46,7 +46,7 @@ void add_user(){
             return;
         }
     }
-    puts("Only two page!");
+    puts("Full!");
     return ;
 }
 
