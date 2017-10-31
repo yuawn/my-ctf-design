@@ -47,3 +47,13 @@ three_page:
         - "10206:4597"
     expose:
         - "4597"
+
+baby_heap:
+    build: ./baby_heap
+    volumes:
+        - ./baby_heap/home:/home/baby_heap:ro
+        - ./baby_heap/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10207:4597"
+    expose:
+        - "4597"
