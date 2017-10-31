@@ -125,7 +125,7 @@ int main(){
     puts( "What's your name?" );
     name = (char*)malloc( 0x20 );
     read( 0 , name , 0x20 );
-    puts "What's your age?" );
+    puts( "What's your age?" );
     age = read_int();
 
     while(1){
