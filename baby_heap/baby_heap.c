@@ -29,7 +29,7 @@ void add_user(){
         if( !n[i].is_valid ){
             printf( "Username: " );
             //read( 0 , n[i].username , 16 );
-            len = __read_chk( 0 , n[i].username , 16 , 16 )
+            len = __read_chk( 0 , n[i].username , 16 , 16 );
             if( n[i].username[len - 1] == '\n' ) n[i].username[len - 1] = '\x00';
             printf( "Password: " );
             n[i].password = strdup( buf );
