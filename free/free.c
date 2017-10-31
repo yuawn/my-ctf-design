@@ -74,7 +74,7 @@ void edit(){
             puts("Alloc error!");
             return;
         }
-        strcpy( n[i] , buf , strlen( buf ) );
+        strncpy( n[i] , buf , strlen( buf ) );
         puts( "done!" );
         return;
     }
