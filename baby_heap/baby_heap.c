@@ -6,7 +6,7 @@
 struct profile{
     int is_valid;
     char *password;
-    char account[16];
+    char username[16];
 };
 
 
@@ -24,13 +24,19 @@ int read_int(){
 
 void add_user(){
     char buf[0x100];
-    int len;
+
     for( int i = 0 ; i < 10 ; ++i ){
         if( !n[i].is_valid ){
-            printf( "Account: " );
-            read( 0 , n[i].account , 20 );
-            read( 0 , buf , 0x100 );
+            printf( "Username: " );
+            read( 0 , n[i].username , 16 );
+            printf( "Password: " );
+            read( 0 , buf , 0x100 - 1 );
             n[i].password = strdup( buf );
+            if( !n[i].password ){
+                puts("Alloc error!");
+                exit(0);
+            }
+            n[i].is_valid = 1;
             puts( "done!" );
             return;
         }
@@ -39,29 +45,63 @@ void add_user(){
     return ;
 }
 
-void change_password(){
+void edit_user(){
     printf("Index:");
+    unsigned i = read_int();
+    if( i > 9 ) {
+        puts("Nop!");
+        exit(0);
+    }
+
+    if( n[i].is_valid ){
+        printf( "New username:" );
+        read( 0 , n[i].username , strlen( n[i].username ) );
+        printf( "New password:" );
+        read( 0 , n[i].password , strlen( n[i].password ) );
+        puts( "done!" );
+        return;
+    }
     
-    puts("Done!");
+    puts("No such user!");
     return ;
 }
 
+
 void show(){
-    printf("Index:");
+    for( int i = 0 ; i < 10 ; ++i ){
+        if( n[i].is_valid ){
+            printf( "user %d: username: %s password: %s" , n[i].username , n[i].password );
+        }
+    }
     return ;
 }
 
 void delete_user(){
-
+    printf("Index:");
+    unsigned i = read_int();
+    if( i > 9 ) {
+        puts("Nop!");
+        exit(0);
+    }
+    if( n[i].is_valid ){
+        memset( n[i].name , 0 , 0x10 );
+        free( n[i].password );
+        n[i].is_valid = 0;
+        puts("done!");
+        return;
+    }
+    puts("No such user!");
+    return;
 }
 
 
 void menu(){
     puts("----------------");
     puts("1. create an user ");
-    puts("2. change password ");
+    puts("2. edit an user ");
     puts("3. show user list ");
-    puts("4. exit");
+    puts("4. remove an user ");
+    puts("5. exit");
     puts("----------------");
     puts("Your choice:");
 }
@@ -84,6 +124,9 @@ int main(){
                 show();
                 break;
             case 4:
+                delete_user
+                break;
+            case 5:
                 printf("Bye!\n");
                 _exit(0);
                 break;
