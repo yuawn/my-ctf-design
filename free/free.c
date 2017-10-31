@@ -24,6 +24,10 @@ void add(){
         if( !n[i] ){
             puts( "Size of chunk:" );
             unsigned int size = read_int();
+            if( size <= 0x100 && count > 2 ){
+                put( "please > 0x100" );
+                return;
+            }
 
             n[i] = (char*)malloc( size );
             if( !n[i] ){
@@ -34,6 +38,7 @@ void add(){
             puts( "Leave something in the chunk:" );
             read( 0 , n[i] , size );
             puts( "done!" );
+            count++;
             return;
         }
     }
