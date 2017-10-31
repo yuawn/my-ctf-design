@@ -34,7 +34,7 @@ void add_user(){
             printf( "Password: " );
             //read( 0 , buf , 0x100 - 1 );
             len = __read_chk( 0 , buf , 0x100 - 1 , 0x100 );
-            if( buf[len - 1] == '\n' ) buf[len - 1] = '\x00';
+            buf[len - 1] = '\x00';
             n[i].password = strdup( buf );
             if( !n[i].password ){
                 puts("Alloc error!");
