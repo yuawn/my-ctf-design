@@ -60,10 +60,13 @@ void edit_user(){
 
     if( n[i].is_valid ){
         printf( "New username:" );
-        read( 0 , n[i].username , n[i].size );
+        //read( 0 , n[i].username , n[i].size );
+        len = __read_chk( 0 , n[i].username , n[i].size , n[i].size );
+        if( n[i].username[len - 1] == '\n' ) n[i].username[len - 1] = '\x00';
         n[i].size = strlen( n[i].username );
         printf( "New password:" );
         read( 0 , n[i].password , strlen( n[i].password ) );
+        n[i].password[ strlen( n[i].password ) ] = '\x00';
         puts( "done!" );
         return;
     }
