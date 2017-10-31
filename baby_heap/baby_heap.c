@@ -84,7 +84,7 @@ void delete_user(){
         exit(0);
     }
     if( n[i].is_valid ){
-        memset( n[i].name , 0 , 0x10 );
+        memset( n[i].username , 0 , 0x10 );
         free( n[i].password );
         n[i].is_valid = 0;
         puts("done!");
@@ -124,7 +124,7 @@ int main(){
                 show();
                 break;
             case 4:
-                delete_user
+                delete_user();
                 break;
             case 5:
                 printf("Bye!\n");
