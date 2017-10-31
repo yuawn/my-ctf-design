@@ -95,6 +95,7 @@ void info(){
                 puts("Alloc error!");
                 return;
             }
+            name = tmp;
             printf( "New name:" );
             read( 0 , name , size );
         }
