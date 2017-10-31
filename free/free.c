@@ -3,8 +3,8 @@
 #include <unistd.h>
 
 
-int len = 0;
 char *name = NULL;
+int len = 0;
 long age = 0;
 long l[0x10];
 char *n[0x10];
@@ -84,9 +84,9 @@ void info(){
         printf( "Change length of name? (1.yes/0.no)" );
         i = read_int();
         if( i ){
-            printf( "New length ( < 30 ):" );
+            printf( "New length ( < 20 ):" );
             unsigned int size = read_int();
-            if( i >= 30 ){
+            if( i >= 20 ){
                 puts("Nop!");
                 exit(0);
             }
@@ -125,8 +125,8 @@ int main(){
     setvbuf(stderr,0,2,0);
     
     puts( "What's your name?" );
-    name = (char*)malloc( 0x20 );
-    len = 0x20;
+    name = (char*)malloc( 0x10 );
+    len = 0x10;
     read( 0 , name , len );
 
     puts( "What's your age?" );
