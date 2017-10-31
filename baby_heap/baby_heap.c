@@ -4,7 +4,7 @@
 
 
 struct profile{
-    int is_valid;
+    int is_valid , size;
     char *password;
     char username[16];
 };
@@ -31,6 +31,7 @@ void add_user(){
             //read( 0 , n[i].username , 16 );
             len = __read_chk( 0 , n[i].username , 16 , 16 );
             if( n[i].username[len - 1] == '\n' ) n[i].username[len - 1] = '\x00';
+            n[i].size = len;
             printf( "Password: " );
             //read( 0 , buf , 0x100 - 1 );
             len = __read_chk( 0 , buf , 0x100 - 1 , 0x100 );
@@ -59,7 +60,8 @@ void edit_user(){
 
     if( n[i].is_valid ){
         printf( "New username:" );
-        read( 0 , n[i].username , strlen( n[i].username ) );
+        read( 0 , n[i].username , n[i].size );
+        n[i].size = strlen( n[i].username );
         printf( "New password:" );
         read( 0 , n[i].password , strlen( n[i].password ) );
         puts( "done!" );
