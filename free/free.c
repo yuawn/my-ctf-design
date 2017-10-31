@@ -84,7 +84,7 @@ void info(){
         printf( "Change length of name? (1.yes/0.no)" );
         i = read_int();
         if( i ){
-            printf( "New length ( < 16 ):" );
+            printf( "New length ( < 20 ):" );
             unsigned int size = read_int();
             if( i >= 16 ){
                 puts("Nop!");
@@ -123,8 +123,8 @@ int main(){
     setvbuf(stderr,0,2,0);
     
     puts( "What's your name?" );
-    name = (char*)malloc( 0x20 );
-    read( 0 , name , 0x20 );
+    name = (char*)malloc( 0x10 );
+    read( 0 , name , 0x10 );
     puts( "What's your age?" );
     age = read_int();
 
