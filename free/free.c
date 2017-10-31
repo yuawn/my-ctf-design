@@ -8,6 +8,7 @@ char *name = NULL;
 long age = 0;
 long l[0x10];
 char *n[0x10];
+int len;
 
 int read_int(){
     char buf[16];
@@ -96,12 +97,13 @@ void info(){
                 return;
             }
             name = tmp;
+            len = size;
             printf( "New name:" );
-            read( 0 , name , size );
+            read( 0 , name , len );
         }
         else{
             printf( "New name:" );
-            read( 0 , name , strlen( name ) );
+            read( 0 , name , len );
         }
     }
     return;
@@ -125,7 +127,9 @@ int main(){
     
     puts( "What's your name?" );
     name = (char*)malloc( 0x10 );
-    read( 0 , name , 0x10 );
+    len = 0x10;
+    read( 0 , name , len );
+
     puts( "What's your age?" );
     age = read_int();
 
