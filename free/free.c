@@ -33,7 +33,6 @@ void add(){
             puts( "Leave something in the chunk:" );
             read( 0 , n[i] , size );
             puts( "done!" );
-            count++;
             return;
         }
     }
