@@ -27,3 +27,11 @@
 * House of force to overwrite data pointer.
 * Leak libc and overwrite `__malloc_hook`.
 * Leave messege trigger shell.
+## Free 500
+* realloc() trick.
+* fastbin attack increase size.
+* heap overflow.
+* sysmalloc trick.
+* unsorted bin attack to data pointer.
+* forge top chunk pointer.
+* __malloc_hook -> one.
