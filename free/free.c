@@ -4,8 +4,6 @@
 
 
 char *name = NULL;
-int len = 0;
-long count = 0;
 long age = 0;
 long l[0x10];
 char *n[0x10];
@@ -80,32 +78,19 @@ void show(){
 
 
 void info(){
-    printf( "Name : %s\nAge: %ld\nSize of name: %d\nchange your name? (1.yes/0.no)" , name , age , strlen( name ) );
+    char buf[0x20];
+    memset( buf , 0 , 0x20 );
+    printf( "Name : %s\nAge: %ld\nchange your name? (1.yes/0.no)" , name , age  );
     unsigned int i = read_int();
     if( i ){
-        printf( "Change length of name? (1.yes/0.no)" );
-        i = read_int();
-        if( i ){
-            printf( "New length ( < 20 ):" );
-            unsigned int size = read_int();
-            if( i >= 20 ){
-                puts("Nop!");
-                exit(0);
-            }
-            char *tmp = realloc( name , size );
-            if( !tmp ){
-                puts("Alloc error!");
-                return;
-            }
-            name = tmp;
-            len = size;
-            printf( "New name:" );
-            read( 0 , name , len );
+        printf( "New name:" );
+        read( 0 , buf , 0x18 );
+        char *tmp = realloc( name , strlen( buf ) );
+        if( !tmp ){
+            puts("Alloc error!");
+            return;
         }
-        else{
-            printf( "New name:" );
-            read( 0 , name , len );
-        }
+        strncpy( name , buf , strlen( buf ) );
     }
     return;
 }
