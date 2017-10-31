@@ -142,6 +142,7 @@ int main(){
                 break;
             case 4:
                 info();
+                break;
             case 5:
                 printf("Bye!\n");
                 _exit(0);
