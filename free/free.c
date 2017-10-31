@@ -50,7 +50,7 @@ void edit(){
     }
 
     if( n[i] ){
-        
+        puts( "Leave something in the chunk:" );
         read( 0 , n[i] , l[i] );
 
         puts( "done!" );
