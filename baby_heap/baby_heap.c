@@ -65,8 +65,9 @@ void edit_user(){
         if( n[i].username[len - 1] == '\n' ) n[i].username[len - 1] = '\x00';
         n[i].size = strlen( n[i].username );
         printf( "New password:" );
-        read( 0 , n[i].password , strlen( n[i].password ) );
-        n[i].password[ strlen( n[i].password ) ] = '\x00';
+        //read( 0 , n[i].password , strlen( n[i].password ) );
+        len = __read_chk( 0 , n[i].password , strlen( n[i].password ) , strlen( n[i].password ) );
+        n[i].password[ len ] = '\x00';
         puts( "done!" );
         return;
     }
