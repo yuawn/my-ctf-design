@@ -78,13 +78,13 @@ void show(){
 
 
 void info(){
-    char buf[0x20];
-    memset( buf , 0 , 0x20 );
+    char buf[0x30];
+    memset( buf , 0 , 0x30 );
     printf( "Name : %s\nAge: %ld\nchange your name? (1.yes/0.no)" , name , age  );
     unsigned int i = read_int();
     if( i ){
         printf( "New name:" );
-        read( 0 , buf , 0x18 );
+        read( 0 , buf , 0x28 );
         char *tmp = realloc( name , strlen( buf ) );
         if( !tmp ){
             puts("Alloc error!");
@@ -112,8 +112,8 @@ int main(){
     setvbuf(stderr,0,2,0);
     
     puts( "What's your name?" );
-    name = (char*)malloc( 0x10 );
-    read( 0 , name , 0x10 );
+    name = (char*)malloc( 0x20 );
+    read( 0 , name , 0x20 );
 
     puts( "What's your age?" );
     age = read_int();
