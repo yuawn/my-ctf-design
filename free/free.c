@@ -25,7 +25,7 @@ void add(){
             puts( "Size of chunk:" );
             unsigned int size = read_int();
             if( size <= 0x100 && count > 2 ){
-                put( "please > 0x100" );
+                puts( "please > 0x100" );
                 return;
             }
 
