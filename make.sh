@@ -6,3 +6,4 @@ cd ../memo_manager && make
 cd ../joke && make
 cd ../three_page && make
 cd ../baby_heap && make
+cd ../free && make
