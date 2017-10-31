@@ -3,12 +3,11 @@
 #include <unistd.h>
 
 
-
+int len;
 char *name = NULL;
 long age = 0;
 long l[0x10];
 char *n[0x10];
-int len;
 
 int read_int(){
     char buf[16];
