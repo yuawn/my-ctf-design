@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 
-int len;
+int len = 0;
 char *name = NULL;
 long age = 0;
 long l[0x10];
