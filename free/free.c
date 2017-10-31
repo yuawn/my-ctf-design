@@ -4,8 +4,8 @@
 
 
 
-char *name;
-long age;
+char *name = NULL;
+long age = 0;
 long l[0x10];
 char *n[0x10];
 
@@ -122,10 +122,10 @@ int main(){
 	setvbuf(stdout,0,2,0);
     setvbuf(stderr,0,2,0);
     
-    printf( "What's your name?" );
+    puts( "What's your name?" );
     name = (char*)malloc( 0x20 );
     read( 0 , name , 0x20 );
-    printf( "What's your age?" );
+    puts "What's your age?" );
     age = read_int();
 
     while(1){
