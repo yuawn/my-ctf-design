@@ -48,7 +48,7 @@ void add(){
 void edit(){
     printf("Index:");
     unsigned i = read_int();
-    if( i > 9 ) {
+    if( i > 15 ) {
         puts("Nop!");
         exit(0);
     }
@@ -69,7 +69,7 @@ void edit(){
 void show(){
     printf("Index:");
     unsigned i = read_int();
-    if( i > 9 ) {
+    if( i > 15 ) {
         puts("Nop!");
         exit(0);
     }
